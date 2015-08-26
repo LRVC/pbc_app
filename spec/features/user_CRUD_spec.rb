@@ -20,6 +20,7 @@ feature 'create Users' do
 
 		fill_in 'First Name', with: "Person"
 		fill_in 'Last Name', with: "Last"
+		fill_in 'Email', with: "person@example.com"
 		fill_in 'Password', with: "password"
 		
 		click_on 'Register'
