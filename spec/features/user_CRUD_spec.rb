@@ -14,15 +14,15 @@ feature 'create Users' do
 	end
 
 	scenario 'User can sign up with valid information' do
+		visit root_path
+
 		click_link 'Sign Up'
 
-		fill_in :first_name, with: "Person"
-		fill_in :last_name, with: "Last"
-		fill_in :password, with: "password"
-		fill_in :height, with: "5'11"
-		fill_in :weight, with: "150"
-
-		click_on 'Sign Up'
+		fill_in 'First Name', with: "Person"
+		fill_in 'Last Name', with: "Last"
+		fill_in 'Password', with: "password"
+		
+		click_on 'Register'
 
 		expect(current_path).to eq root_path
 	end
