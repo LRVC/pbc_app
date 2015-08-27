@@ -29,12 +29,16 @@ feature 'create Users' do
 		expect(current_path).to eq root_path
 	end
 
-	xscenario 'User can not register with invalid fields' do
+	scenario 'User can not register and will see error messages if fields are not valid' do
 		visit root_path
 
 		click_on 'Sign Up'
-
 		click_on 'Register'
+
+		expect(page).to have_content "First name can't be blank"
+		expect(page).to have_content "Last name can't be blank"
+		expect(page).to have_content "Email can't be blank"
+		expect(page).to have_content "Password can't be blank"
 	end
 
 
