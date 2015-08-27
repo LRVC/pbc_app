@@ -16,7 +16,7 @@ feature 'create Users' do
 	scenario 'User can sign up with valid information' do
 		visit root_path
 
-		click_link 'Sign Up'
+		click_on 'Sign Up'
 
 		fill_in 'First Name', with: "Person"
 		fill_in 'Last Name', with: "Last"
@@ -27,4 +27,13 @@ feature 'create Users' do
 
 		expect(current_path).to eq root_path
 	end
+
+	scenario 'User can not register with invalid fields'
+	visit root_path
+
+	click_on 'Sign Up'
+
+	click_on 'Register'
+
+	
 end
