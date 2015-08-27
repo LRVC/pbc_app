@@ -6,7 +6,8 @@ feature 'create Users' do
 		User.destroy_all
 		@user = User.create!(
 			first_name: "Name", 
-			last_name: "Last", 
+			last_name: "Last",
+			email: "user@exmple.com", 
 			password: "password", 
 			height: "5'11", 
 			weight: 150)
@@ -28,12 +29,13 @@ feature 'create Users' do
 		expect(current_path).to eq root_path
 	end
 
-	scenario 'User can not register with invalid fields'
-	visit root_path
+	xscenario 'User can not register with invalid fields' do
+		visit root_path
 
-	click_on 'Sign Up'
+		click_on 'Sign Up'
 
-	click_on 'Register'
+		click_on 'Register'
+	end
 
-	
+
 end
