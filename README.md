@@ -1,1 +1,1 @@
-## Website for the Professional Bouldering Circuit
+## Official site for the Professional Bouldering Circuit
